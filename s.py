@@ -18,12 +18,14 @@ def gradient_descent(objective, derivative, bounds, n_iter, step_size):
 
         gradient = derivative(solution)
 
+        solution = solution - step_size * gradient
+
         solution_eval = objective(solution)
 
-        solution.append(solution.copy())
+        solutions.append(solution.copy())
         scores.append(solution_eval.copy())
 
-        print('>%d f(%s) = %.5f' % (i, solution[0], solution_eval{0}))
+        print('>%d f(%s) = %.5f' % (i, solution[0], solution_eval[0]))
     return [solutions, scores]
 
 bounds = asarray([[-1.0, 1.0]])
@@ -35,6 +37,7 @@ solutions, scores = gradient_descent(
 )
 
 inputs = arange(bounds[0, 0], bounds[0, 1] + 0.1, 0.1)
+results = objective(inputs)
 
 pyplot.plot(inputs, results, label='Objective Function')
 pyplot.plot(
