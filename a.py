@@ -41,5 +41,5 @@ def chat():
     chat = Chat(pairs, reflection)
     chat.converse()
 
-if__name__ =="__main__":
+if __name__ =="__main__":
       chat()    
